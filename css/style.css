@@ -48,6 +48,16 @@ span{
     margin-left: 15px;
 }
 
+/*icon section*/
+.btnIcon{
+    display: flex; 
+    justify-content: center;
+}
+
+img{
+    width: 7%;
+    height: 20% ;
+}
 /*buttons section*/
 button{
     padding:10px 15px 10px 15px;
