@@ -1,0 +1,130 @@
+
+body{
+    font-family: "Comic Sans MS";
+    margin:0px;
+}
+
+/*main section for score and board */
+.container{
+    display: flex;
+}
+/*score section */
+.score{
+ width: 30%;
+ align-self: center;
+ align-items: center;
+ font-size: 25px;
+}
+span{
+    color:#8AD6CC;
+}
+/*board section */
+.board{
+    width: 70%;
+    display: grid;
+    grid-gap: 0px 100px;
+    grid-template-columns: 20px 20px 20px;
+    margin: 15px 0px 15px 130px;
+}
+.index{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    width: 120px;
+    height: 100px;
+    border:none;
+    border-radius: 12px;
+    margin-top: 5px ;
+    margin-bottom: 5px;
+    background-color: #F99192;
+}
+
+#index-1, #index-4, #index-7   {
+    margin-left: -15px;
+}
+
+#index-3, #index-6, #index-9  {
+    margin-left: 15px;
+}
+
+/*buttons section*/
+button{
+    padding:10px 15px 10px 15px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 0px;
+    color: black;
+    background-color:  #8AD6CC;
+}
+button:hover{
+    background-color: #B2EEE6;
+}
+.btnXO, .message, .turn, h3, .restart{
+    display: flex; 
+    justify-content: center;
+}
+#Xbtn{
+    margin-right: 5px;
+    font-family: "Comic Sans MS";
+}
+#Obtn{
+    margin-left: 5px;
+    font-family: "Comic Sans MS";
+}
+.restart{
+    margin: 10px 0px;
+}
+.playAgain{
+    font-size: 20px;
+    padding:15px 20px;
+    font-family: "Comic Sans MS";
+}
+
+/*players information*/
+.message {
+    font-size: 20px;
+}
+.turn {
+    font-size: 20px;
+}
+
+/*footer section */
+footer{
+    background-color: gray;
+    display:flex;
+    justify-content: center;
+    position: relative;
+}
+footer p{
+    padding: 19px 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 15px;
+    color: white;
+}
+/*For mobile ver.*/
+@media (max-width:360px ){
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .board{
+        margin-left: 70px;
+        grid-gap: 0px 50px;
+        grid-template-columns: 10px 10px 10px;
+    }
+    .index{
+        width: 60px;
+        height: 50px;
+    }
+    .score{
+        font-size: 1em;
+    }
+    .turn {
+        font-size: 1em;
+    }
+    .message{
+        font-size: 1em;
+    }
+}
