@@ -47,9 +47,10 @@ function whosWin(arr, playerName){
     let sortArr =arr.sort();
     saveResult = winChance.find(combo => combo.every(num => sortArr.includes(num.toString())) );
     console.log('win response is', saveResult);
-    if(saveResult === undefined){
+    if(saveResult === undefined ){
        // console.log("game end");
-       // $('.draw').text("it's a draw" )
+        $('.turn').text("it's a draw" )
+        // $(event.target).text().length == 0
     }else{
        $('.turn').text("Player: "+playerName + " Win !" ).css({"color":'#8AD6CC' , "font-weight":"bold"})
        $(".board").children().unbind('click');
@@ -65,10 +66,10 @@ function whosWin(arr, playerName){
     }
 }
 $('.playAgain').on("click", function (event){
-    $('.message').text(""); 
+    $('.message').text(" "); 
     $('#Xbtn').attr("disabled", false);
     $('#Obtn').attr("disabled", false);
-    $('.index').text("");
+    $('.index').text(" ");
     $('.index').css("backgroundColor","#F99192");
     $('.turn').css({"color":"black","font-weight":"normal" });
     $('.turn').text(" ");
