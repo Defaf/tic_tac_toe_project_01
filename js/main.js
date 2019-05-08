@@ -8,6 +8,7 @@ let winChance = [ [1, 2, 3],[4, 5, 6], [7, 8, 9], [1, 4, 7],
 let clickCount = 0 ;
 let scoreP1 = 0; 
 let scoreP2 = 0;  
+let scoreTie = 0 ;
 let turn = ' ';
 
 $('.index').unbind('click');
@@ -17,6 +18,7 @@ $('#Obtn').on("click", buttonO);
 function startGame(event){
     let idNum = $(this).attr('id');
     event.preventDefault();
+    turn= player2;
     if(  $(event.target).text().length == 0 ){
         if(clickCount %2 === 0 ){
             $('.turn').text("it's "+ turn + " turn ");
@@ -24,16 +26,21 @@ function startGame(event){
             $(event.target).css("backgroundColor","#F97171");
             $('#clickEffect').get(0).play();
             play1Arr.push(getNumericPart(idNum));
-            turn= player2;
+            turn= player1;
         }else{
+            turn= player1;
             $('.turn').text("it's "+ turn  + " turn ");
             $(event.target).text(player2);
             $(event.target).css("backgroundColor","#F97171");
             $('#plopEffect').get(0).play();
             play2Arr.push(getNumericPart(idNum));
-            turn= player1;
         }
         clickCount +=1;
+        if(clickCount == 9){
+            $('.turn').text("it's a draw" ).css({"color":'#8AD6CC' , "font-weight":"bold"})
+            scoreTie +=1;
+            $('.scoreTie').text(scoreTie);
+        }
         if(clickCount >= 5 ){
             whosWin(play1Arr,player1)
             whosWin(play2Arr,player2)
@@ -41,15 +48,16 @@ function startGame(event){
     }else{
         $(event.target).off();
     }
+     
 }//end startGame function
 
 function whosWin(arr, playerName){
     let sortArr =arr.sort();
     saveResult = winChance.find(combo => combo.every(num => sortArr.includes(num.toString())) );
     console.log('win response is', saveResult);
-    if(saveResult === undefined ){
+    if(saveResult === undefined){
        // console.log("game end");
-        $('.turn').text("it's a draw" )
+        //$('.turn').text("it's a draw" )
         // $(event.target).text().length == 0
     }else{
        $('.turn').text("Player: "+playerName + " Win !" ).css({"color":'#8AD6CC' , "font-weight":"bold"})
@@ -61,7 +69,7 @@ function whosWin(arr, playerName){
         }else if(player2 == playerName){
             scoreP2 +=1 ;
             $('.scorep2').text(scoreP2);
-        }
+        } 
        console.log("Player: "+playerName + " Win !");
     }
 }
@@ -69,7 +77,7 @@ $('.playAgain').on("click", function (event){
     $('.message').text(" "); 
     $('#Xbtn').attr("disabled", false);
     $('#Obtn').attr("disabled", false);
-    $('.index').text(" ");
+    $('.index').text("");
     $('.index').css("backgroundColor","#F99192");
     $('.turn').css({"color":"black","font-weight":"normal" });
     $('.turn').text(" ");
@@ -96,6 +104,7 @@ function buttonX(event){
     $('.index').on("click", startGame);
     $('#Xbtn').css("hover",false);
     turn = 'X'; 
+    $('.turn').text("it's "+ turn + " turn ");
 } 
 
 function buttonO(event){
@@ -106,4 +115,5 @@ function buttonO(event){
     $('#Obtn').attr("disabled", true);
     $('.index').on("click", startGame);
     turn = 'O';
+    $('.turn').text("it's "+ turn + " turn ");
 } 
