@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel ="stylesheet" href="css/style.css">
+    <title>Tic Tac Toe Game</title>
+</head>
+<body>
+
+    <audio id="clickEffect" src="audio/waterDrop.mp3"  type="audio/waterDrop"></audio>
+    <audio id="plopEffect" src="audio/Plop.mp3"  type="audio/Plop"></audio>
+    <audio id="yeahAnime" src="audio/ohYeahAnime.mp3"  type="audio/ohYeahAnime"></audio>
+    <h3>Please choose your start </h3>
+    <section class="btnXO">
+        <button class="btn" id="Xbtn">X</button>  
+        <button class="btn" id="Obtn">O</button>    
+    </section>
+
+    <section class="informPlaying">
+        <p class="message"></p>
+        <p class="turn"></p>
+    </section>
+
+    <main class="container">
+
+        <aside class="score">
+            <h3 class="sPlayer1">Player1: <span class="scorep1">0</span></h3>
+            <h3 class="sPlayer2">Player2: <span class="scorep2">0</span></h3>
+        </aside>
+
+        <aside class="board">
+
+            <div class ="index"  id="index-1"><h4></h4></div>
+            <div class ="index"  id="index-2"><h4></h4></div>
+            <div class ="index"  id="index-3"><h4></h4></div>
+            <div class ="index"  id="index-4"><h4></h4></div>
+            <div class ="index"  id="index-5"><h4></h4></div>
+            <div class ="index"  id="index-6"><h4></h4></div>
+            <div class ="index"  id="index-7"><h4></h4></div>
+            <div class ="index"  id="index-8"><h4></h4></div>
+            <div class ="index"  id="index-9"><h4></h4></div>
+        </aside>
+    </main>
+
+    <section class="restart">
+        <button class="playAgain">Play Again</button>
+    </section>
+    
+    <footer>
+        <p>Made by Dhaffaf </p>
+    </footer>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
