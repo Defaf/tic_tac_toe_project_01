@@ -40,6 +40,7 @@ function startGame(event){
             $('.turn').text("it's a draw" ).css({"color":'#8AD6CC' , "font-weight":"bold"})
             scoreTie +=1;
             $('.scoreTie').text(scoreTie);
+            $('#loseEffect').get(0).play();
         }
         if(clickCount >= 5 ){
             whosWin(play1Arr,player1)
@@ -62,7 +63,7 @@ function whosWin(arr, playerName){
     }else{
        $('.turn').text("Player: "+playerName + " Win !" ).css({"color":'#8AD6CC' , "font-weight":"bold"})
        $(".board").children().unbind('click');
-       $('#yeahAnime').get(0).play();
+       $('#winEffect').get(0).play();
        if(player1 == playerName){
            scoreP1 +=1 ;
            $('.scorep1').text(scoreP1);
