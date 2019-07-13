@@ -8,30 +8,33 @@
     <title>Tic Tac Toe Game</title>
 </head>
 <body>
-
+    <!--AUDIO SECTION -->
     <audio id="clickEffect" src="audio/waterDrop.mp3"  type="audio/waterDrop"></audio>
     <audio id="plopEffect" src="audio/Plop.mp3"  type="audio/Plop"></audio>
     <audio id="winEffect" src="audio/winning.mp3"  type="audio/winning"></audio>
     <audio id="loseEffect" src="audio/lose.mp3"  type="audio/lose"></audio>
+
+    <!-- HEADER SECTION -->
     <h3>Please choose your start </h3>
     <section class="btnXO">
         <button class="btn" id="Xbtn">X</button>  
         <button class="btn" id="Obtn">O</button>    
     </section>
-
+    <!-- PLAYING INFORMATION SECTION -->
     <section class="informPlaying">
         <p class="message"></p>
         <p class="turn"></p>
     </section>
 
     <main class="container">
-
+        <!-- SCORING SYSTE SECTION-->
         <aside class="score">
             <h3 class="sPlayer1">Player1: <span class="scorep1">0</span></h3>
             <h3 class="sPlayer2">Player2: <span class="scorep2">0</span></h3>
             <h3 class="sTie">Tie: <span class="scoreTie">0</span></h3>
         </aside>
 
+        <!--GAME BOARD SECTION -->
         <aside class="board">
 
             <div class ="index"  id="index-1"><h4></h4></div>
@@ -45,11 +48,11 @@
             <div class ="index"  id="index-9"><h4></h4></div>
         </aside>
     </main>
-
+    <!-- RESTART SECTION-->
     <section class="restart">
         <button class="playAgain">Play Again</button>
     </section>
-    
+    <!--FOOTER SECTION-->
     <footer>
         <p>Made by Dhaffaf </p>
     </footer>
