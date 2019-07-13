@@ -1,9 +1,7 @@
-
 body{
     font-family: "Comic Sans MS";
     margin:0px;
 }
-
 /*main section for score and board */
 .container{
     display: flex;
@@ -47,17 +45,6 @@ span{
 #index-3, #index-6, #index-9  {
     margin-left: 15px;
 }
-
-/*icon section*/
-.btnIcon{
-    display: flex; 
-    justify-content: center;
-}
-
-img{
-    width: 7%;
-    height: 20% ;
-}
 /*buttons section*/
 button{
     padding:10px 15px 10px 15px;
@@ -74,12 +61,8 @@ button:hover{
     display: flex; 
     justify-content: center;
 }
-#Xbtn{
+#Xbtn , #Obtn{
     margin-right: 5px;
-    font-family: "Comic Sans MS";
-}
-#Obtn{
-    margin-left: 5px;
     font-family: "Comic Sans MS";
 }
 .restart{
@@ -92,10 +75,7 @@ button:hover{
 }
 
 /*players information*/
-.message {
-    font-size: 20px;
-}
-.turn {
+.message, .turn {
     font-size: 20px;
 }
 
@@ -128,13 +108,7 @@ footer p{
         width: 60px;
         height: 50px;
     }
-    .score{
-        font-size: 1em;
-    }
-    .turn {
-        font-size: 1em;
-    }
-    .message{
+    .score,.turn , .message{
         font-size: 1em;
     }
 }
